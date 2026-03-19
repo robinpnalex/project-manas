@@ -1,3 +1,5 @@
+#cant't classify data accurately using linear kernel 
+
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -66,5 +68,3 @@ print(f"\nAccuracy: {svm.score(X_val, y_val):.4f}")
 print(classification_report(y_val, preds, target_names=["No Cancer", "Cancer"]))
 print("Confusion matrix:")
 print(confusion_matrix(y_val, preds))
-
-# couldn't accurately classify the data with linear SVM, so used RBF kernel instead (see svm_cancer_rbf.py)
