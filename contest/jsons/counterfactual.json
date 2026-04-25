@@ -1,0 +1,30 @@
+{
+  "description": "Counterfactual: Minimal perturbation to flip SVM decision while keeping AlexNet invariant",
+  "methodology": "Representer Theorem inverse - compute gradient w.r.t. input to flip decision",
+  "svm_model": {
+    "kernel": "rbf",
+    "C": 1.0,
+    "gamma": "scale"
+  },
+  "counterfactual_logic": {
+    "principle": "Find minimal ||δ|| such that sign(f(x + δ)) ≠ sign(f(x))",
+    "constraint": "AlexNet feature representation remains invariant",
+    "formulation": "δ* = argmin ||δ||² subject to y·f(x + δ) ≤ 0"
+  },
+  "example_computation": {
+    "original_decision": "positive",
+    "target_decision": "negative",
+    "perturbation_formula": "δ = -f(x)·∇K(x) / ||∇K(x)||²",
+    "kernel_gradient": "∂K(x,x_i)/∂x = -2γ(x - x_i)K(x,x_i)",
+    "interpretation": "Move away from support vectors with positive contribution"
+  },
+  "alexnet_invariance": {
+    "constraint": "Perturbation must not affect max-pooling mask in Conv5→FC6 pathway",
+    "spatial_requirement": "δ must be within receptive field that doesn't change pool indices",
+    "mathematical_form": "max_pool(x + δ) = max_pool(x) for affected pooling regions"
+  },
+  "delivery": {
+    "format": "JSON with perturbation vector and validation",
+    "verification": "Show decision flip while preserving spatial features"
+  }
+}

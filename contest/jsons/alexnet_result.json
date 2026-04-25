@@ -1,0 +1,252 @@
+{
+  "architecture": {
+    "conv5_shape": [
+      13,
+      13,
+      256
+    ],
+    "pool4_shape": [
+      6,
+      6,
+      256
+    ],
+    "fc6_size": 4096
+  },
+  "layer_connections": {
+    "conv5_to_maxpool": "2x2 max pooling with stride 2",
+    "maxpool_to_fc6": "flatten then fully connected (9216 \u2192 4096)"
+  },
+  "neuron_backprojection": [
+    {
+      "fc6_index": 0,
+      "maxpool_coord": [
+        0,
+        0,
+        0
+      ],
+      "conv5_receptive_field": {
+        "h_range": [
+          0,
+          2
+        ],
+        "w_range": [
+          0,
+          2
+        ],
+        "channel": 0
+      },
+      "spatial_patch": {
+        "height": 2,
+        "width": 2,
+        "attribution_weights": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "fc6_index": 100,
+      "maxpool_coord": [
+        0,
+        0,
+        100
+      ],
+      "conv5_receptive_field": {
+        "h_range": [
+          0,
+          2
+        ],
+        "w_range": [
+          0,
+          2
+        ],
+        "channel": 100
+      },
+      "spatial_patch": {
+        "height": 2,
+        "width": 2,
+        "attribution_weights": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "fc6_index": 500,
+      "maxpool_coord": [
+        0,
+        1,
+        244
+      ],
+      "conv5_receptive_field": {
+        "h_range": [
+          0,
+          2
+        ],
+        "w_range": [
+          2,
+          4
+        ],
+        "channel": 244
+      },
+      "spatial_patch": {
+        "height": 2,
+        "width": 2,
+        "attribution_weights": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "fc6_index": 1000,
+      "maxpool_coord": [
+        0,
+        3,
+        232
+      ],
+      "conv5_receptive_field": {
+        "h_range": [
+          0,
+          2
+        ],
+        "w_range": [
+          6,
+          8
+        ],
+        "channel": 232
+      },
+      "spatial_patch": {
+        "height": 2,
+        "width": 2,
+        "attribution_weights": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "fc6_index": 2000,
+      "maxpool_coord": [
+        1,
+        1,
+        208
+      ],
+      "conv5_receptive_field": {
+        "h_range": [
+          2,
+          4
+        ],
+        "w_range": [
+          2,
+          4
+        ],
+        "channel": 208
+      },
+      "spatial_patch": {
+        "height": 2,
+        "width": 2,
+        "attribution_weights": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "fc6_index": 3000,
+      "maxpool_coord": [
+        1,
+        5,
+        184
+      ],
+      "conv5_receptive_field": {
+        "h_range": [
+          2,
+          4
+        ],
+        "w_range": [
+          10,
+          12
+        ],
+        "channel": 184
+      },
+      "spatial_patch": {
+        "height": 2,
+        "width": 2,
+        "attribution_weights": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "fc6_index": 4095,
+      "maxpool_coord": [
+        2,
+        3,
+        255
+      ],
+      "conv5_receptive_field": {
+        "h_range": [
+          4,
+          6
+        ],
+        "w_range": [
+          6,
+          8
+        ],
+        "channel": 255
+      },
+      "spatial_patch": {
+        "height": 2,
+        "width": 2,
+        "attribution_weights": [
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      }
+    }
+  ]
+}
